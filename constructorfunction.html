@@ -7,29 +7,47 @@
     <title> Constructor</title>
     <script type="text/javascript">
 
-    function Airplane(model,seating_capacity,maximum_speed){
-      this.model = model;
-      this.seating_capacity = seating_capacity;
-      this.maximum_speed = maximum_speed;
-      this.print = function (){
-        return "Airplane model ="+this.model+ " and seating capicity "+this.seating_capacity+
-         " and average speed = "+Airplane.averagespeed;
-
-      }
+    function Airplane(model, seatingCapacity, maxSpeed) {
+        this.model = model;
+        this.seatingCapacity = seatingCapacity;
+        this.maxSpeed = maxSpeed;
+        this.print = function print() {
+            console.log("Model : " + this.model);
+            console.log("Seating Capacity : " + this.seatingCapacity);
+            console.log("Maximum Speed : " + this.maxSpeed);
+        }
     }
 
+    var airplane1 = new Airplane(2000, 180, 900);
+    console.log(airplane1.print());
+    var airplane2 = new Airplane(2001, 300, 1200);
+    console.log(airplane2.print());
+    var airplane3 = new Airplane(2003, 60, 700);
+    console.log(airplane3.print());
 
-      var airplane = new Airplane(2000,10);
-      delete Airplane.maximumspeed;
-      Airplane.averagespeed = 600;
-      console.log(airplane.print());
+    airplane1.seatingCapacity += 10;
+    airplane2.seatingCapacity += 10;
+    airplane3.seatingCapacity += 10;
+    console.log('Seating capacity increased')
+    console.log(airplane1.print())
+    console.log(airplane2.print())
+    console.log(airplane3.print())
 
-     var airplane1 = new Airplane(2001,10);
-      console.log(airplane1.print());
+    delete airplane1.maxSpeed;
+    delete airplane2.maxSpeed;
+    delete airplane3.maxSpeed;
 
-      var airplane2 = new Airplane(2002,10);
-      console.log(airplane2.print());
+    console.log(airplane1);
+    console.log(airplane2);
+    console.log(airplane3);
 
+    airplane1.avgSpeed = 600;
+    airplane2.avgSpeed = 600;
+    airplane3.avgSpeed = 600;
+
+    console.log(airplane1);
+    console.log(airplane2);
+    console.log(airplane3);
 
 
     </script>
