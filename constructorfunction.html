@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Constructor</title>
+    <script type="text/javascript">
+
+    function Airplane(model,seating_capacity,maximum_speed){
+      this.model = model;
+      this.seating_capacity = seating_capacity;
+      this.maximum_speed = maximum_speed;
+      this.print = function (){
+        return "Airplane model ="+this.model+ " and seating capicity "+this.seating_capacity+
+         " and average speed = "+Airplane.averagespeed;
+
+      }
+    }
+
+
+      var airplane = new Airplane(2000,10);
+      delete Airplane.maximumspeed;
+      Airplane.averagespeed = 600;
+      console.log(airplane.print());
+
+     var airplane1 = new Airplane(2001,10);
+      console.log(airplane1.print());
+
+      var airplane2 = new Airplane(2002,10);
+      console.log(airplane2.print());
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
